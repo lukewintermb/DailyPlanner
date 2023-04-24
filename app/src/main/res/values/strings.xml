@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DailyPlanner2</string>
+    <string name="daily_planner">Daily Planner</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create Account</string>
+    <string name="logout">Logout</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_out">Log Out</string>
+    <string name="admin_stuff">Admin Stuff</string>
+</resources>
