@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/adminSettings"
+            android:icon="@drawable/baseline_admin_panel_settings_24"
+            android:title="@string/admin_settings"
+            android:visible="true"
+            app:showAsAction="ifRoom"/>
+        <item android:id="@+id/logout"
+            android:visible="true"
+            android:icon="@drawable/baseline_logout_24"
+            android:title="@string/logout"
+            app:showAsAction="ifRoom"/>
+
+</menu>

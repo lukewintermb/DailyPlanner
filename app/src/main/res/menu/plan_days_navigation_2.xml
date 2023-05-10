@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@id/bottomNavigationTodos">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="@string/today"
+        android:iconTint="@color/white"
+        app:actionLayout="@layout/day_navigation_item" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:title="@string/tomorrow"
+        app:actionLayout="@layout/day_navigation_item" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:title="@string/general"
+        app:actionLayout="@layout/day_navigation_item" />
+
+</menu>

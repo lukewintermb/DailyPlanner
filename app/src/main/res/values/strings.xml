@@ -10,4 +10,32 @@
     <string name="password">Password</string>
     <string name="log_out">Log Out</string>
     <string name="admin_stuff">Admin Stuff</string>
+    <string name="admin_settings">Admin Settings</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="log_in">Log in</string>
+    <string name="no_account_yet">No account yet?</string>
+    <string name="go_back">Go Back</string>
+    <string name="all_users">All Users</string>
+    <string name="home">Home</string>
+    <string name="calender">Calender</string>
+    <string name="plan">Plan</string>
+    <string name="add_activity">Add Activity</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="general">General</string>
+    <string name="create_activity">Create Activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo_fragment">Todo Fragment</string>
+    <string name="add_todo">Add Todo</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
+    <string name="name">Name</string>
+    <string name="category">Category</string>
+    <string name="category_name">Category name</string>
+    <string name="choose_color">Choose Color</string>
+    <string name="add_category">Add Category</string>
+    <string name="something_you_could_do_right_now">Something you could do right now:</string>
+    <string name="welcome_to_tomorrow">Welcome to Tomorrow</string>
 </resources>

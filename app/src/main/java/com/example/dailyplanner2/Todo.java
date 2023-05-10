@@ -10,12 +10,16 @@ public class Todo {
     @PrimaryKey(autoGenerate = true)
     private int mTodoId;
     private String mName;
+    private String mDay;
 
     private int mUserId;
+    private int mCategoryId;
 
-    public Todo(String name, int userId) {
+    public Todo(String name, int userId, String day, int categoryId) {
         mName = name;
         mUserId = userId;
+        mDay = day;
+        mCategoryId = categoryId;
     }
 
     @Override
@@ -24,6 +28,22 @@ public class Todo {
                 "mTodoId=" + mTodoId +
                 ", mName='" + mName + '\'' +
                 '}';
+    }
+
+    public int getCategoryId() {
+        return mCategoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        mCategoryId = categoryId;
+    }
+
+    public String getDay() {
+        return mDay;
+    }
+
+    public void setDay(String day) {
+        mDay = day;
     }
 
     public int getTodoId() {

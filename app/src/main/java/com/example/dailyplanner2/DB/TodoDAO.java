@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.dailyplanner2.Category;
 import com.example.dailyplanner2.Todo;
 import com.example.dailyplanner2.User;
 
@@ -28,6 +29,9 @@ public interface TodoDAO {
     @Query("SELECT * FROM " + AppDataBase.TODO_TABLE + " WHERE mTodoId = :todoId")
     List<Todo> getLogById(int todoId);
 
+    @Query("SELECT * FROM " + AppDataBase.TODO_TABLE + " WHERE mUserId = :userId AND mDay = :day")
+    List<Todo> getLogByDayAndUserId(int userId, String day);
+
     @Query("SELECT * FROM " + AppDataBase.TODO_TABLE + " WHERE mUserId = :userId")
     List<Todo> getLogByUserId(int userId);
 
@@ -48,4 +52,20 @@ public interface TodoDAO {
 
     @Query("SELECT * FROM " + AppDataBase.USER_TABLE + " WHERE mUserId = :userId")
     User getUserByUserId(String userId);
+
+
+    @Insert
+    void insert(Category...categories);
+
+    @Update
+    void update(Category...categories);
+
+    @Delete
+    void delete(Category...categories);
+
+    @Query("SELECT * FROM " + AppDataBase.CATEGORY_TABLE + " WHERE mUserId = :userId")
+    List<Category> getCategoriesByUserId(int userId);
+
+    @Query("SELECT * FROM " + AppDataBase.CATEGORY_TABLE + " WHERE mCategoryId = :categoryId")
+    Category getCategoryByCategoryId(String categoryId);
 }

@@ -1,4 +1,4 @@
-package com.example.dailyplanner2;
+package com.example.dailyplanner2.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -9,39 +9,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dailyplanner2.DB.AppDataBase;
 import com.example.dailyplanner2.DB.TodoDAO;
+import com.example.dailyplanner2.R;
+import com.example.dailyplanner2.User;
 
 public class LoginActivity extends AppCompatActivity {
-
     private EditText mUsernameField;
     private EditText mPasswordField;
     private Button mButton;
-
     private TodoDAO mTodoDAO;
-
     private String mUsername;
     private String mPassword;
-
     private User mUser;
+    private TextView mCreateAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         wireupDisplay();
 
         getDatabase();
-
     }
 
     private void wireupDisplay(){
-        mUsernameField = findViewById(R.id.editTextTextPersonName);
-        mPasswordField = findViewById(R.id.editTextTextPassword);
-        mButton = findViewById(R.id.button_login);
+        mUsernameField = findViewById(R.id.editTextCreateAccountUsername);
+        mPasswordField = findViewById(R.id.editTextCreateAccountPassword);
+        mButton = findViewById(R.id.buttonLoginLogin);
+        mCreateAccount = findViewById(R.id.textViewLoginCreateAccount);
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,10 +52,18 @@ public class LoginActivity extends AppCompatActivity {
                     if(!validatePassword()){
                         Toast.makeText(LoginActivity.this, "Invalid Password", Toast.LENGTH_SHORT).show();
                     }else{
-                        Intent intent = LandingPage.intentFactory(getApplicationContext(), mUser.getUserId());
+                        Intent intent = LandingPage.intentFactory(getApplicationContext(), mUser.getUserId(), R.id.navHome);
                         startActivity(intent);
                     }
                 }
+            }
+        });
+
+        mCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = CreateAccountActivity.intentFactory(getApplicationContext());
+                startActivity(intent);
             }
         });
     }
@@ -77,10 +86,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void getDatabase(){
-        mTodoDAO = Room.databaseBuilder(this, AppDataBase.class, AppDataBase.DATABASE_NAME)
-                .allowMainThreadQueries()
-                .build()
-                .TodoDAO();
+        mTodoDAO = AppDataBase.getInstance(getApplicationContext()).TodoDAO();;
     }
 
     public static Intent intentFactory(Context context){
@@ -88,4 +94,5 @@ public class LoginActivity extends AppCompatActivity {
 
         return intent;
     }
+
 }
