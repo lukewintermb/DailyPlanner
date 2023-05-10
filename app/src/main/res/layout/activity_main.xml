@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/imageViewMainLogo"
-        android:layout_width="match_parent"
-        android:layout_height="238dp"
+        android:layout_width="305dp"
+        android:layout_height="154dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="52dp"
         android:layout_marginRight="12dp"
-        android:src="@drawable/tomorrowwood"
+        android:src="@drawable/check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
